@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+python3 - "${1:-}" <<'PY'
+from pathlib import Path
+import re,sys
+h=Path.home(); root=h/'.config/omarchy/themes/pastel-spectrum'
+for version in ('3.0','4.0'):
+    target=h/f'.config/gtk-{version}/gtk.css'
+    text=target.read_text() if target.exists() else ''
+    text=re.sub(r'/\* BEGIN PASTEL SPECTRUM GTK \*/\n.*?/\* END PASTEL SPECTRUM GTK \*/\n?','',text,flags=re.S)
+    if sys.argv[1]=='pastel-spectrum':
+        text='/* BEGIN PASTEL SPECTRUM GTK */\n@import url("'+(root/f'gtk-{version}/gtk.css').as_uri()+'");\n/* END PASTEL SPECTRUM GTK */\n'+text
+    target.parent.mkdir(parents=True,exist_ok=True); target.write_text(text)
+PY

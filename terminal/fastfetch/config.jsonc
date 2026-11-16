@@ -1,0 +1,16 @@
+{
+  "logo": {
+    "type": "none"
+  },
+  "modules": [
+    {
+      "type": "command",
+      "text": "python3 \"$HOME/.config/fastfetch/pastel-panel.py\"",
+      "key": "\u001b[0m",
+      "format": "{result}"
+    }
+  ],
+  "display": {
+    "separator": ""
+  }
+}
