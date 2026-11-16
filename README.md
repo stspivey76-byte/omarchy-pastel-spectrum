@@ -9,6 +9,25 @@ rainbow Fastfetch and Starship styling.
 
 ## Install
 
+Copy and paste this command:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/stspivey76-byte/omarchy-pastel-spectrum/main/download.sh | bash
+```
+
+This installs the full theme plus the Fastfetch and Starship terminal styling,
+with backups. Requires `curl`, Git, Python 3, and a current Omarchy desktop.
+For compatible custom bars, add rainbow icons with:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/stspivey76-byte/omarchy-pastel-spectrum/main/download.sh | bash -s -- --rainbow-icons
+```
+
+The terminal appearance requires Fastfetch, Starship, and a Nerd Font. Existing
+shell startup commands are preserved. The installer prints its backup path.
+
+### Manual installation (theme only)
+
 Requires a current Omarchy desktop, Git, Bash, and Python 3. The installer writes
 only to your home directory and prints a backup path before changing files.
 
